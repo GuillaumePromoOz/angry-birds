@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BirdsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/birds', function () {
+/*Route::get('/birds', function () {
     return view('birds.index');
-});
+});*/
+
+// Homepage
+Route::get('/', [BirdsController::class, 'index']);
+
+// Bird show
+Route::get('/birds/{id}', [BirdsController::class, 'show']);
