@@ -22,4 +22,8 @@ use App\Http\Controllers\BirdsController;
 Route::get('/', [BirdsController::class, 'index']);
 
 // Bird show
-Route::get('/birds/{id}', [BirdsController::class, 'show']);
+// Pattern is interger
+Route::get(
+    '/birds/{id}',
+    [BirdsController::class, 'show']
+)->where('id', '[0-9]+');
