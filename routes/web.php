@@ -14,16 +14,4 @@ use App\Http\Controllers\BirdsController;
 |
 */
 
-/*Route::get('/birds', function () {
-    return view('birds.index');
-});*/
-
-// Homepage
-Route::get('/', [BirdsController::class, 'index']);
-
-// Bird show
-// Pattern is interger
-Route::get(
-    '/birds/{id}',
-    [BirdsController::class, 'show']
-)->where('id', '[0-9]+');
+Route::resource('/birds', BirdsController::class);
