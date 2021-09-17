@@ -18,6 +18,7 @@
                 <div class="card-body">
                     <h4 class="card-title">{{ $bird->image }}</h4>
                     <p class="card-text">{{ $bird->description }}</p>
+                    <p class="card-text">{{ $bird->price }}</p>
                 </div>
             </div>
             @endforeach

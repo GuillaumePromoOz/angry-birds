@@ -48,7 +48,14 @@ class BirdsController extends Controller
 
         $bird->save();*/
 
-        $bird = Bird::create([
+        /*$request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+            'price' => 'required'
+        ]);*/
+
+        Bird::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'image' => $request->input('image'),
