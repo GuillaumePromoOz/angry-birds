@@ -28,7 +28,7 @@ class BirdsController extends Controller
      */
     public function create()
     {
-        //
+        return view('birds.create');
     }
 
     /**
@@ -39,7 +39,23 @@ class BirdsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        /*$bird = new Bird;
+        $bird->name = $request->input('name');
+        $bird->description = $request->input('description');
+        $bird->image = $request->input('image');
+        $bird->price = $request->input('price');
+
+        $bird->save();*/
+
+        $bird = Bird::create([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'image' => $request->input('image'),
+            'price' => $request->input('price')
+        ]);
+
+        return redirect('/birds');
     }
 
     /**
