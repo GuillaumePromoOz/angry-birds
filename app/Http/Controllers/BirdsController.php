@@ -40,14 +40,6 @@ class BirdsController extends Controller
     public function store(Request $request)
     {
 
-        /*$bird = new Bird;
-        $bird->name = $request->input('name');
-        $bird->description = $request->input('description');
-        $bird->image = $request->input('image');
-        $bird->price = $request->input('price');
-
-        $bird->save();*/
-
         /*$request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -71,9 +63,9 @@ class BirdsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Bird $bird)
     {
-        //
+        return view('birds.show', compact('bird'));
     }
 
     /**
