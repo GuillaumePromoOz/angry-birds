@@ -45,6 +45,11 @@ class BirdsController extends Controller
             'description' => 'required',
             'image' => 'required',
             'price' => 'required'
+        ], [
+            'name.required' => 'name is required',
+            'description.required' => 'description is required',
+            'image.required' => 'image is required',
+            'price.required' => 'price is required',
         ]);
 
         /* For informational purposes only
@@ -98,6 +103,11 @@ class BirdsController extends Controller
             'description' => 'required',
             'image' => 'required',
             'price' => 'required'
+        ], [
+            'name.required' => 'name is required',
+            'description.required' => 'description is required',
+            'image.required' => 'image is required',
+            'price.required' => 'price is required',
         ]);
 
         $bird->update($request->all());
