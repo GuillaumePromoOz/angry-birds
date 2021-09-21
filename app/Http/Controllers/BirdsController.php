@@ -40,12 +40,12 @@ class BirdsController extends Controller
     public function store(Request $request)
     {
 
-        /*$request->validate([
+        $request->validate([
             'name' => 'required',
             'description' => 'required',
             'image' => 'required',
             'price' => 'required'
-        ]);*/
+        ]);
 
         Bird::create([
             'name' => $request->input('name'),
