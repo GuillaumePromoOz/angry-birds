@@ -14,8 +14,12 @@
                 <h3 class="display-4">{{ $bird->price}}€</h3>
             </div>
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-success update-button">Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <a href="{{ $bird->id }}/edit" type="button" class="btn btn-success update-button">Edit</a>
+                <form action="{{ route('birds.destroy',$bird->id) }}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
             </div>
         </div>
     </div>

@@ -7,7 +7,6 @@
     </a>
 </div>
 
-
 <main class="container">
     <div class="row">
         @foreach ($birds as $bird)

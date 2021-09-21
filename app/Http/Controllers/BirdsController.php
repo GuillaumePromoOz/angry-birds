@@ -47,14 +47,19 @@ class BirdsController extends Controller
             'price' => 'required'
         ]);
 
+        /* For informational purposes only
         Bird::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'image' => $request->input('image'),
             'price' => $request->input('price')
-        ]);
+        ]);*/
 
-        return redirect('/birds');
+        // Shortcut way of fetching all of the inputs
+        // with request, using function all()
+        Bird::create($request->all());
+
+        return redirect()->route('birds.index');
     }
 
     /**
@@ -74,9 +79,9 @@ class BirdsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Bird $bird)
     {
-        //
+        return view('birds.edit', compact('bird'));
     }
 
     /**
@@ -86,9 +91,18 @@ class BirdsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Bird $bird)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+            'price' => 'required'
+        ]);
+
+        $bird->update($request->all());
+
+        return redirect()->route('birds.index');
     }
 
     /**
@@ -97,8 +111,10 @@ class BirdsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Bird $bird)
     {
-        //
+        $bird->delete();
+
+        return redirect()->route('birds.index');
     }
 }
