@@ -55,17 +55,17 @@ class BirdsController extends Controller
             'price.required' => 'price is required',
         ]);
 
-        /* For informational purposes only
         Bird::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'image' => $request->input('image'),
-            'price' => $request->input('price')
-        ]);*/
+            'price' => $request->input('price'),
+            'user_id' => $request->user()->id
+        ]);
 
         // Shortcut way of fetching all of the inputs
         // with request, using function all()
-        Bird::create($request->all());
+        //Bird::create($request->all());
 
         return redirect()->route('birds.index');
     }

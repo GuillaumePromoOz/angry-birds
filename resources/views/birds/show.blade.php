@@ -14,6 +14,7 @@
                 <h3 class="display-4">{{ $bird->price}}€</h3>
             </div>
             <div class="d-flex flex-row-reverse">
+                @if (isset(Auth::user()->id) && Auth::user()->id == $bird->user_id)
                 <div class="p-2">
                     <form action="{{ route('birds.destroy',$bird->id) }}" method="POST">
                         @csrf
@@ -24,6 +25,7 @@
                 <div class="p-2">
                     <a href="{{ $bird->id }}/edit" type="button" class="btn btn-primary">Edit</a>
                 </div>
+                @endif
                 <div class="p-2">
                     <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf

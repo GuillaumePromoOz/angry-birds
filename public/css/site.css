@@ -13,6 +13,11 @@ body {
     margin-top: 90px;
 }
 
+.home-header {
+    background-color: rgb(250 250 250 / 0.5);
+    padding: 2rem 2rem;
+}
+
 .home-bird-card {
     background-color: transparent;
     text-align: center;

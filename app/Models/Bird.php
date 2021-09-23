@@ -13,7 +13,7 @@ class Bird extends Model
 
     protected $primaryKey = 'id';
 
-    protected $fillable = ['name', 'description', 'image', 'price'];
+    protected $fillable = ['name', 'description', 'image', 'price', 'user_id'];
 
     protected $timestamp = true;
 }
