@@ -22,18 +22,12 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url('birds') }}">Home
+                        <a class="nav-link {{ session('activeNav') === 'home' ? 'active' : null }}" href="{{ url('birds') }}">Home
                             <span class="visually-hidden">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link {{ session('activeNav') === 'cart' ? 'active' : null }}" href="{{ url('cart') }}">Cart</a>
                     </li>
                 </ul>
                 <form class="d-flex">

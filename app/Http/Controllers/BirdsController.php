@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Bird;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class BirdsController extends Controller
 {
@@ -15,6 +16,8 @@ class BirdsController extends Controller
     public function index()
     {
         $birds = Bird::all();
+
+        Session::put('activeNav', 'home');
 
         return view('birds.index', [
             'birds' => $birds
