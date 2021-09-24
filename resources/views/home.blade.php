@@ -10,7 +10,8 @@
                 </div>
                 <div class="card-body text-center">
                     <h5 class="card-title">{{ __('Hello ') . Auth::user()->name . __('!') }}</h5>
-                    <a href="#" class="btn btn-primary mt-3">Sell a bird</a>
+                    <a href="#" class="btn btn-primary mt-3">Edit profile</a>
+                    <a href="#" class="btn btn-danger mt-3">Delete profile</a>
                 </div>
                 <div class="card-footer text-muted text-center">
                     last connection 2 days ago
