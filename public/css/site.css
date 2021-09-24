@@ -63,3 +63,7 @@ body {
 .dashboard-header {
     font-weight: bold;
 }
+
+.edit-profile-btn {
+    margin-right: 1rem;
+}
