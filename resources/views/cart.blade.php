@@ -55,11 +55,14 @@
             <div>
                 Total: ${{ Cart::getTotal() }}
             </div>
-            <div>
+            <div class="d-flex justify-content-between">
                 <form action="{{ route('cart.clear') }}" method="POST">
                     @csrf
                     <button class="btn btn-danger mt-3">Delete Cart</button>
                 </form>
+                <a href="{{ url('birds') }}">
+                    <button type="button" class="btn btn-lg btn-secondary">Back</button>
+                </a>
             </div>
 
         </div>
