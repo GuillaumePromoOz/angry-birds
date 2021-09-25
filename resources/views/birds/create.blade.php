@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mt-4">
     <div class="jumbotron create-form">
-        <form action="/birds" method="POST">
+        <form action="/birds" method="POST" enctype="multipart/form-data">
             @csrf
             <h1 class="display-4">Create a bird</h1>
             <div class="form-group">
@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label for="inputimage" class="form-label mt-4">Image</label>
-                <input type="text" class="form-control" id="inputimage" name="image" placeholder=".png">
+                <input type="file" class="form-control" id="inputimage" name="image">
                 @if ($errors->has('image'))
                 <span class="text-danger">{{ $errors->first('image') }}</span>
                 @endif

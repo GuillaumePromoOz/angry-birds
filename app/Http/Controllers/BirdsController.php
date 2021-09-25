@@ -42,11 +42,10 @@ class BirdsController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'image' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048',
             'price' => 'required'
         ], [
             'name.required' => 'name is required',
@@ -55,17 +54,21 @@ class BirdsController extends Controller
             'price.required' => 'price is required',
         ]);
 
+        $newImageName = time() . '-' . $request->name . '.' . $request->image->extension();
+
+        $request->image->move(public_path('images'), $newImageName);
+
         Bird::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
-            'image' => $request->input('image'),
+            'image' => $newImageName,
             'price' => $request->input('price'),
             'user_id' => $request->user()->id
         ]);
 
         // Shortcut way of fetching all of the inputs
         // with request, using function all()
-        //Bird::create($request->all());
+        // Bird::create($request->all());
 
         return redirect()->route('birds.index');
     }

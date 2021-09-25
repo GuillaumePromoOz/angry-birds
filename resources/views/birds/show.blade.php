@@ -6,7 +6,7 @@
         <h1 class="display-4">{{ $bird->name }}</h1>
         <div class="row">
             <div class="col-3">
-                <img class="home-product-image" src="{{ asset('images/' . $bird->image) }}" alt="product-image" />
+                <img src="{{ asset('images/' . $bird->image) }}" alt="product-image" width="100%" />
             </div>
             <div class="col-9">
                 <p class="lead">{{ $bird->description }}</p>
