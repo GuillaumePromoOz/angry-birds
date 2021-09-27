@@ -5,7 +5,7 @@
 @if (Auth::user())
 <div class="container d-flex justify-content-center">
     <a href="birds/create">
-        <button type="button" class="btn btn-lg btn-secondary mt-5">Add a bird</button>
+        <button type="button" class="btn btn-lg btn-secondary mt-5">Add bird</button>
     </a>
 </div>
 @else

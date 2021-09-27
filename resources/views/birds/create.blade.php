@@ -5,7 +5,7 @@
     <div class="jumbotron create-form">
         <form action="/birds" method="POST" enctype="multipart/form-data">
             @csrf
-            <h1 class="display-4">Create a bird</h1>
+            <h1 class="display-4">Add a bird</h1>
             <div class="form-group">
                 <label for="inputname" class="form-label mt-4">Name</label>
                 <input type="text" class="form-control" id="inputname" name="name" placeholder="enter a name">
