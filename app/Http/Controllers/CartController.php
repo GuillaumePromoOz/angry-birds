@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
+/**
+ * For cart I have used a service provider
+ * (Darryldecode\Cart\CartServiceProvider::class in config/app.php)
+ */
+
 class CartController extends Controller
 {
     public function cartList()
     {
         $cartItems = \Cart::getContent();
-        // dd($cartItems);
 
         Session::put('activeNav', 'cart');
 

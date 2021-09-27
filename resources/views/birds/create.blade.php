@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <div class="input-group mb-3">
                         <span class="input-group-text">€</span>
-                        <input type="text" class="form-control" name="price" aria-label="Amount (to the nearest dollar)">
+                        <input type="text" class="form-control" name="price">
                         <span class="input-group-text">.00</span>
                     </div>
                 </div>

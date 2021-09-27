@@ -42,6 +42,7 @@ class BirdsController extends Controller
      */
     public function store(Request $request)
     {
+        // Validates data from request
         $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -54,10 +55,15 @@ class BirdsController extends Controller
             'price.required' => 'price is required',
         ]);
 
+        // In newImageName variable will be stored the image's name,
+        // concatenated to a timestamp and its extension,
+        // as to have a unique file name for each file uploaded by User
         $newImageName = time() . '-' . $request->name . '.' . $request->image->extension();
 
+        // Next we move the uploaded image to repo public/images where it will be stored
         $request->image->move(public_path('images'), $newImageName);
 
+        //Save
         Bird::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
