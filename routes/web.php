@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BirdsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +28,4 @@ Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear'
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');

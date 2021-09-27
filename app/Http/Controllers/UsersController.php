@@ -35,7 +35,7 @@ class UsersController extends Controller
 
         $user->update($request->all());
 
-        return redirect()->route('home');
+        return redirect()->route('dashboard');
     }
 
     /**
